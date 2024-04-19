@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shine Restaurant</title>
+    <link rel="stylesheet" href="billing.css">
+</head>
+<body>
+    
+    <div class="tables" id="container">
+        <p id="name">Shine Vegetarian Restaurant</p>
+        <table id="tab">
+            <tr style="height: 60px; width:100%;font-size: 30px;color: rgb(255, 166, 0);font-weight: bold;">
+                <td>Product Name</td>
+                <td>Price</td>
+                <td>Quantity</td>
+            </tr>
+            <tr>
+            <td> Bisi Bele Bath</td>
+            <td>₹ 50</td>
+            <td><input type="number" id="i1" value="0"></td>
+        </tr>
+        <tr>
+            <td>North Indian Meals</td>
+        <td>₹ 120</td>
+        <td><input type="number" id="i2" value="0"></td></tr>
+
+        <tr>
+            <td>Chapathi</td>
+            <td>₹ 40</td>
+            <td><input type="number" id="i3" value="0"></td>
+        </td>
+
+        <tr>
+            <td>Curd Rice</td>
+            <td>₹ 55</td>
+            <td><input type="number" id="i4" value="0"></td>
+        </tr>
+
+        <tr>
+            <td>Masala Dosa</td>
+            <td>₹ 65</td>
+            <td><input type="number" id="i5" value="0"></td>
+        </tr>
+
+        <tr>
+            <td>Roti Curry</td>
+            <td>₹ 70</td>
+            <td><input type="number" id="i6" value="0"></td>
+        </tr>
+
+        <tr>
+            <td>Veg Pulav</td>
+            <td>₹ 60</td>
+            <td><input type="number" id="i7" value="0"></td>
+        </tr>
+
+        <tr>
+            <td>Veg Biriyani</td>
+            <td>₹ 90</td>
+            <td><input type="number" id="i8" value="0"></td>
+        </tr>
+        <tr>
+            <td>Paneer Biriyani</td>
+            <td>₹ 130</td>
+            <td><input type="number" id="i9" value="0"></td>
+    </table>
+    <button id="cal" onclick="p()" >Calculate</button>
+
+</div>
+
+    <div class="outer" id="out">
+    <div class="bill" id="bil">
+        <p style="font-size: 30px; font-weight: bold;">Bill Receipt</p>
+        <table id="tab2">
+            <tr style="font-size: 18px; font-weight: bolder;">
+                <td>Product Name</td>
+                <td>Product Price</td>
+                <td>Quantity</td>
+                <td>Total Cost</td>
+            </tr>
+        </table>
+        <p id="cost">Total Cost:</p>
+    </div>
+</div>
+    
+
+    <script>
+        function p()
+        {
+                var table=document.getElementById("out");
+                var ta=document.getElementById("tab2");
+           
+                let rowCount = ta.rows.length;
+
+                    //deleting the rows before ,printing the bill
+                    for(k=1;k<rowCount;k++)
+                    {
+                        ta.deleteRow(1);
+                    }
+                 
+
+                
+                var bbb=parseInt(document.getElementById("i1").value)*50;
+                var ni=parseInt(document.getElementById("i2").value)*120;
+                var chap=parseInt(document.getElementById("i3").value)*40;
+                var cur=parseInt(document.getElementById("i4").value)*55;
+                var mas=parseInt(document.getElementById("i5").value)*65;
+                var roti=parseInt(document.getElementById("i6").value)*70;
+                var pula=parseInt(document.getElementById("i7").value)*60;
+                var biri=parseInt(document.getElementById("i8").value)*90;
+                var paneer=parseInt(document.getElementById("i9").value)*130;
+                var sum=bbb+ni+chap+cur+mas+roti+pula+biri+paneer;
+               
+           
+            var table=document.getElementById("tab2");
+            var arr=[bbb,ni,chap,cur,mas,roti,pula,biri,paneer];
+            var prod_list=[["Bisi Bele Bath",50],["North Indian Meals",120],["Chapathi",40],["Curd Rice",55],["Masala Dosa",65],["Roti Curry",70],["Veg Pulav",60],["Veg Biriyani",90],["Paneer Biriyani",130]];
+            var products=[];
+            for(i=0;i<arr.length;i++)
+            {
+                var m=0;
+                if(arr[i]>0)
+                {
+                    products.push([prod_list[i][m],prod_list[i][m+1],(arr[i]/prod_list[i][m+1]),arr[i]]);
+                }
+            }
+
+            if(products.length==0)
+            {
+                window.alert("Please Select Products first!");
+                return;
+            }
+            var container= document.getElementById("container");
+            var b=document.getElementById("bil");
+                    container.style.left="450px";
+                    table.style.visibility="visible";
+                    b.style.visibility="visible";
+
+
+
+            for(j=0;j<products.length;j++)
+            {
+                var k=0;
+                var row=table.insertRow(j+1);
+                var cell1=row.insertCell(0);
+                var cell2=row.insertCell(1);
+                var cell3=row.insertCell(2);
+                var cell4=row.insertCell(3);
+                cell1.innerHTML=products[j][k];
+                cell2.innerHTML="₹ "+products[j][k+1];
+                cell3.innerHTML=products[j][k+2];
+                cell4.innerHTML="₹ "+products[j][k+3];
+           
+            }
+
+           
+
+            document.getElementById("cost").innerHTML="Total Cost : ₹ "+sum;
+            document.getElementById("total").innerHTML=products.length;
+            
+        }
+    </script>
+
+
+    
+</body>
+</html>

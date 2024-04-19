@@ -1,0 +1,142 @@
+.tables{
+    height: 600px;
+    width: 800px;
+    /* background-image: linear-gradient(black,silver,grey); */
+    background-image: linear-gradient(purple,rgb(255, 1, 255),purple);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5%;
+    box-shadow:0px 0px 20px 5px purple ;
+    transition: 1.2s;
+}
+#tab{
+    height: 400px;
+    width: 800px;
+    font-size: 25px;
+    position: relative;
+    top:-40px;
+    
+
+}
+
+ #name{
+    color: aqua;
+    font-size: 50px;
+    font-weight: bolder;
+    position: relative;
+    top: -30px;
+    width: 98%;
+    text-align: center;border-radius: 50%;
+    background-color: rgb(95, 3, 95);
+} 
+#tab tr{
+    width: 70px;
+    height: 10px;
+    /* background-image: linear-gradient(black,rgb(53, 52, 52),black);*/ 
+     background: rgb(70, 1, 70); 
+
+    text-align: center;
+    color: rgb(245, 211, 148);
+}
+input{
+    height: 80%;
+    width: 60%;
+    color: purple;
+    font-weight: bolder;
+    font-size: 20px;
+    text-align: center;
+    initial-value: 0;
+}
+input:focus{
+  background-image: linear-gradient(aqua,wheat);
+    color: purple;
+    font-weight: bolder;
+    font-size: 20px;
+    text-align: center;
+}
+#cal
+{
+    width: 180px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    position: relative;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 5px 3px white;
+    background-image:linear-gradient(orange,yellow,orange);
+    color: black;
+    font-weight: bolder;
+    font-size: 20px;
+}
+#cal:active
+{
+    box-shadow: 0px 0px 10px 5px aqua;
+    color: purple;
+    
+}
+
+#total{
+    position: absolute;
+    bottom: 10px;
+    left: 70%;
+    background-color: aqua;
+    height: 30px;
+    width: 150px;
+    
+    text-align: center;
+    font-size: x-large;
+    color: black;
+}
+#tab2
+{
+    width: 400px;
+    
+}
+.outer{
+
+    width: 410px;
+    height: 630px;
+    position: absolute;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    right: 30px;justify-content: center;
+    flex-direction: column;
+    
+}
+
+.bill{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(aqua,white,aqua);
+    height: fit-content;
+    border-radius: 10%;
+    transition: all 2.5s;
+    border: inset;
+    box-shadow: 0px 10px 10px 2px rgb(95, 94, 94);
+    
+}
+
+tr{
+    color: black;
+    background-color:wheat ;
+    height: 30px;
+    width: 200px;
+    font-size: 17px;
+    text-align: center;
+}
+#cost{
+    position: relative;
+    width: fit-content;
+    
+    font-size: 20px;
+    font-weight: bolder;
+}
